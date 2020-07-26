@@ -2,3 +2,4 @@
 *.iml
 build/rasterizer.xcodeproj/xcuserdata
 build/rasterizer.xcodeproj/project.xcworkspace/xcuserdata
+prebuilt
