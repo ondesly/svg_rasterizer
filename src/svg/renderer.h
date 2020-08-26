@@ -14,9 +14,9 @@ typedef struct _cairo_surface cairo_surface_t;
 
 namespace cc {
 
-    template<class T>
+    template<class T, class S>
     struct vector2;
-    using size_t2 = vector2<size_t>;
+    using size_t2 = vector2<size_t, size_t>;
 
 }
 
