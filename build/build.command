@@ -21,7 +21,7 @@ rm -rf build
 mkdir build
 cd build
 
-cmake .. -DCMAKE_TOOLCHAIN_FILE=../toolchain/ios.toolchain.cmake -DPLATFORM="OS"
+cmake .. -DCMAKE_TOOLCHAIN_FILE=../toolchain/ios.toolchain.cmake -DPLATFORM="OS" -DDEPLOYMENT_TARGET="11.0" -DENABLE_BITCODE=FALSE -DENABLE_ARC=FALSE -DENABLE_VISIBILITY=FALSE -DENABLE_STRICT_TRY_COMPILE=FALSE
 make
 
 # iOS Simulator
@@ -31,7 +31,7 @@ rm -rf build
 mkdir build
 cd build
 
-cmake .. -DCMAKE_TOOLCHAIN_FILE=../toolchain/ios.toolchain.cmake -DPLATFORM="SIMULATOR64"
+cmake .. -DCMAKE_TOOLCHAIN_FILE=../toolchain/ios.toolchain.cmake -DPLATFORM="SIMULATOR64" -DDEPLOYMENT_TARGET="11.0" -DENABLE_BITCODE=FALSE -DENABLE_ARC=FALSE -DENABLE_VISIBILITY=FALSE -DENABLE_STRICT_TRY_COMPILE=FALSE
 make
 
 # iOS Fat
