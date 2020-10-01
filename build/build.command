@@ -51,7 +51,7 @@ rm -rf build
 mkdir build
 cd build
 
-cmake .. -DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake -DANDROID_ABI="arm64-v8a"
+cmake .. -DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake -DANDROID_PLATFORM=21 -DANDROID_ABI="arm64-v8a"
 make
 
 # Arm7
@@ -61,7 +61,7 @@ rm -rf build
 mkdir build
 cd build
 
-cmake .. -DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake -DANDROID_ABI="armeabi-v7a"
+cmake .. -DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake -DANDROID_PLATFORM=21 -DANDROID_ABI="armeabi-v7a"
 make
 
 # x86
@@ -71,7 +71,7 @@ rm -rf build
 mkdir build
 cd build
 
-cmake .. -DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake -DANDROID_ABI="x86_64"
+cmake .. -DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake -DANDROID_PLATFORM=21 -DANDROID_ABI="x86_64"
 make
 
 cd ..
