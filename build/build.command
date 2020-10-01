@@ -13,7 +13,7 @@ fi
 
 cd "$(dirname "$0")"
 
-rm -rf prebuilt
+rm -rf ../prebuilt
 
 # iOS Devices
 
