@@ -108,3 +108,8 @@ set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo/cairo-version.c
     ${CAIRO_ROOT}/src/cairo/cairo-wideint.c
     ${CAIRO_ROOT}/src/cairo/cairo.c)
+
+set_source_files_properties(
+  ${CAIRO_SRC}
+  PROPERTIES
+  COMPILE_FLAGS "-w")

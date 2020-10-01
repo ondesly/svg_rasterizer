@@ -35,3 +35,8 @@ set(PIXMAN_SRC
     ${PIXMAN_ROOT}/src/pixman/pixman-timer.c
     ${PIXMAN_ROOT}/src/pixman/pixman-trap.c
     ${PIXMAN_ROOT}/src/pixman/pixman-utils.c)
+
+set_source_files_properties(
+  ${PIXMAN_SRC}
+  PROPERTIES
+  COMPILE_FLAGS "-w")
