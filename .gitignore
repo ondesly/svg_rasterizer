@@ -1,5 +1,5 @@
 *.DS_Store
 *.iml
-build/rasterizer.xcodeproj/xcuserdata
-build/rasterizer.xcodeproj/project.xcworkspace/xcuserdata
+test_app/svg_rasterizer.xcodeproj/xcuserdata
+test_app/svg_rasterizer.xcodeproj/project.xcworkspace/xcuserdata
 prebuilt
