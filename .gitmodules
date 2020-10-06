@@ -1,3 +1,0 @@
-[submodule "deps/numerals"]
-	path = deps/numerals
-	url = git@github.com:ondesly/numerals.git
