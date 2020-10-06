@@ -17,12 +17,9 @@ set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo-arc.c
     ${CAIRO_ROOT}/src/cairo-array.c
     ${CAIRO_ROOT}/src/cairo-atomic.c
-    ${CAIRO_ROOT}/src/cairo-base64-stream.c
-    ${CAIRO_ROOT}/src/cairo-base85-stream.c
     ${CAIRO_ROOT}/src/cairo-bentley-ottmann-rectangular.c
     ${CAIRO_ROOT}/src/cairo-bentley-ottmann-rectilinear.c
     ${CAIRO_ROOT}/src/cairo-bentley-ottmann.c
-    ${CAIRO_ROOT}/src/cairo-botor-scan-converter.c
     ${CAIRO_ROOT}/src/cairo-boxes-intersect.c
     ${CAIRO_ROOT}/src/cairo-boxes.c
     ${CAIRO_ROOT}/src/cairo-cache.c
@@ -30,7 +27,6 @@ set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo-clip-polygon.c
     ${CAIRO_ROOT}/src/cairo-clip-region.c
     ${CAIRO_ROOT}/src/cairo-clip-surface.c
-    ${CAIRO_ROOT}/src/cairo-clip-tor-scan-converter.c
     ${CAIRO_ROOT}/src/cairo-clip.c
     ${CAIRO_ROOT}/src/cairo-color.c
     ${CAIRO_ROOT}/src/cairo-composite-rectangles.c
