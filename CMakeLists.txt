@@ -38,6 +38,7 @@ FetchContent_Declare(
 FetchContent_Declare(
     numerals
     GIT_REPOSITORY  https://github.com/ondesly/numerals.git
+    GIT_TAG         ac3d2ef6a0584d8b75c2fa2b9810486a32d4c616
     GIT_SHALLOW     TRUE
     GIT_PROGRESS    TRUE)
 
@@ -51,6 +52,7 @@ FetchContent_Declare(
 FetchContent_Declare(
     stb
     GIT_REPOSITORY  https://github.com/nothings/stb.git
+    GIT_TAG         b42009b3b9d4ca35bc703f5310eedc74f584be58
     GIT_SHALLOW     TRUE
     GIT_PROGRESS    TRUE)
 
