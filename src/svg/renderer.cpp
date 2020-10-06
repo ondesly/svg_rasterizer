@@ -6,9 +6,9 @@
 #include <unordered_map>
 #include <vector>
 
-#include <cairo/cairo.h>
+#include <cairo.h>
 #include <numerals/vector2.h>
-#include <pugixml/pugixml.hpp>
+#include <pugixml.hpp>
 
 #include "renderer.h"
 

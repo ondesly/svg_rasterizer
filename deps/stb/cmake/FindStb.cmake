@@ -1,3 +1,0 @@
-set(STB_ROOT ${CMAKE_CURRENT_LIST_DIR}/..)
-
-set(STB_INCLUDE_DIRS ${STB_ROOT}/include)

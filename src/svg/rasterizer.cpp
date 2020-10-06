@@ -4,8 +4,8 @@
 
 #define STB_RECT_PACK_IMPLEMENTATION
 
-#include <pugixml/pugixml.hpp>
-#include <stb/stb_rect_pack.h>
+#include <pugixml.hpp>
+#include <stb_rect_pack.h>
 
 #include "svg/renderer.h"
 
