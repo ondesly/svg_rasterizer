@@ -47,13 +47,10 @@ set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo-hash.c
     ${CAIRO_ROOT}/src/cairo-hull.c
     ${CAIRO_ROOT}/src/cairo-image-compositor.c
-    ${CAIRO_ROOT}/src/cairo-image-info.c
     ${CAIRO_ROOT}/src/cairo-image-source.c
     ${CAIRO_ROOT}/src/cairo-image-surface.c
-    ${CAIRO_ROOT}/src/cairo-lzw.c
     ${CAIRO_ROOT}/src/cairo-mask-compositor.c
     ${CAIRO_ROOT}/src/cairo-matrix.c
-    ${CAIRO_ROOT}/src/cairo-mempool.c
     ${CAIRO_ROOT}/src/cairo-mesh-pattern-rasterizer.c
     ${CAIRO_ROOT}/src/cairo-misc.c
     ${CAIRO_ROOT}/src/cairo-mono-scan-converter.c

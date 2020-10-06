@@ -128,8 +128,6 @@
 		90BC2C69252B7C2B007D846E /* cairo-path-stroke-tristrip.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2AD9252B7C26007D846E /* cairo-path-stroke-tristrip.c */; };
 		90BC2C6D252B7C2B007D846E /* cairo-shape-mask-compositor.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2ADE252B7C26007D846E /* cairo-shape-mask-compositor.c */; };
 		90BC2C6E252B7C2B007D846E /* cairo-shape-mask-compositor.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2ADE252B7C26007D846E /* cairo-shape-mask-compositor.c */; };
-		90BC2C6F252B7C2B007D846E /* cairo-lzw.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2AE2252B7C26007D846E /* cairo-lzw.c */; };
-		90BC2C70252B7C2B007D846E /* cairo-lzw.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2AE2252B7C26007D846E /* cairo-lzw.c */; };
 		90BC2C72252B7C2B007D846E /* cairo-debug.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2AE4252B7C26007D846E /* cairo-debug.c */; };
 		90BC2C73252B7C2B007D846E /* cairo-debug.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2AE4252B7C26007D846E /* cairo-debug.c */; };
 		90BC2C74252B7C2B007D846E /* cairo-hash.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2AE5252B7C26007D846E /* cairo-hash.c */; };
@@ -164,8 +162,6 @@
 		90BC2CAC252B7C2C007D846E /* cairo-image-compositor.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B1B252B7C26007D846E /* cairo-image-compositor.c */; };
 		90BC2CB3252B7C2C007D846E /* cairo-no-compositor.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B20252B7C26007D846E /* cairo-no-compositor.c */; };
 		90BC2CB4252B7C2C007D846E /* cairo-no-compositor.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B20252B7C26007D846E /* cairo-no-compositor.c */; };
-		90BC2CB5252B7C2C007D846E /* cairo-mempool.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B22252B7C26007D846E /* cairo-mempool.c */; };
-		90BC2CB6252B7C2C007D846E /* cairo-mempool.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B22252B7C26007D846E /* cairo-mempool.c */; };
 		90BC2CB7252B7C2C007D846E /* cairo-image-source.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B23252B7C26007D846E /* cairo-image-source.c */; };
 		90BC2CB8252B7C2C007D846E /* cairo-image-source.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B23252B7C26007D846E /* cairo-image-source.c */; };
 		90BC2CB9252B7C2C007D846E /* cairo-surface-snapshot.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B24252B7C26007D846E /* cairo-surface-snapshot.c */; };
@@ -200,8 +196,6 @@
 		90BC2CEC252B7C2D007D846E /* cairo-path.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B4E252B7C27007D846E /* cairo-path.c */; };
 		90BC2CED252B7C2D007D846E /* cairo-mutex.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B50252B7C27007D846E /* cairo-mutex.c */; };
 		90BC2CEE252B7C2D007D846E /* cairo-mutex.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B50252B7C27007D846E /* cairo-mutex.c */; };
-		90BC2CEF252B7C2D007D846E /* cairo-image-info.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B51252B7C27007D846E /* cairo-image-info.c */; };
-		90BC2CF0252B7C2D007D846E /* cairo-image-info.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B51252B7C27007D846E /* cairo-image-info.c */; };
 		90BC2CF3252B7C2D007D846E /* cairo-version.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B58252B7C27007D846E /* cairo-version.c */; };
 		90BC2CF4252B7C2D007D846E /* cairo-version.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B58252B7C27007D846E /* cairo-version.c */; };
 		90BC2CF9252B7C2D007D846E /* cairo-surface-fallback.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BC2B5B252B7C27007D846E /* cairo-surface-fallback.c */; };
@@ -415,7 +409,6 @@
 		90BC2ADF252B7C26007D846E /* cairo-pdf-surface-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cairo-pdf-surface-private.h"; sourceTree = "<group>"; };
 		90BC2AE0252B7C26007D846E /* cairo-surface-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cairo-surface-private.h"; sourceTree = "<group>"; };
 		90BC2AE1252B7C26007D846E /* cairo-gl-ext-def-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cairo-gl-ext-def-private.h"; sourceTree = "<group>"; };
-		90BC2AE2252B7C26007D846E /* cairo-lzw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cairo-lzw.c"; sourceTree = "<group>"; };
 		90BC2AE4252B7C26007D846E /* cairo-debug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cairo-debug.c"; sourceTree = "<group>"; };
 		90BC2AE5252B7C26007D846E /* cairo-hash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cairo-hash.c"; sourceTree = "<group>"; };
 		90BC2AE6252B7C26007D846E /* cairo-mempool-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cairo-mempool-private.h"; sourceTree = "<group>"; };
@@ -459,7 +452,6 @@
 		90BC2B1F252B7C26007D846E /* cairo-ft-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cairo-ft-private.h"; sourceTree = "<group>"; };
 		90BC2B20252B7C26007D846E /* cairo-no-compositor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cairo-no-compositor.c"; sourceTree = "<group>"; };
 		90BC2B21252B7C26007D846E /* cairo-malloc-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cairo-malloc-private.h"; sourceTree = "<group>"; };
-		90BC2B22252B7C26007D846E /* cairo-mempool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cairo-mempool.c"; sourceTree = "<group>"; };
 		90BC2B23252B7C26007D846E /* cairo-image-source.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cairo-image-source.c"; sourceTree = "<group>"; };
 		90BC2B24252B7C26007D846E /* cairo-surface-snapshot.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cairo-surface-snapshot.c"; sourceTree = "<group>"; };
 		90BC2B25252B7C26007D846E /* cairo-surface-offset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cairo-surface-offset.c"; sourceTree = "<group>"; };
@@ -494,7 +486,6 @@
 		90BC2B4E252B7C27007D846E /* cairo-path.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cairo-path.c"; sourceTree = "<group>"; };
 		90BC2B4F252B7C27007D846E /* cairo-pdf-shading-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cairo-pdf-shading-private.h"; sourceTree = "<group>"; };
 		90BC2B50252B7C27007D846E /* cairo-mutex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cairo-mutex.c"; sourceTree = "<group>"; };
-		90BC2B51252B7C27007D846E /* cairo-image-info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cairo-image-info.c"; sourceTree = "<group>"; };
 		90BC2B52252B7C27007D846E /* cairo-backend-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cairo-backend-private.h"; sourceTree = "<group>"; };
 		90BC2B54252B7C27007D846E /* cairo-qt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cairo-qt.h"; sourceTree = "<group>"; };
 		90BC2B55252B7C27007D846E /* test-compositor-surface-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "test-compositor-surface-private.h"; sourceTree = "<group>"; };
@@ -880,17 +871,14 @@
 				90BC2B77252B7C27007D846E /* cairo-hull.c */,
 				90BC2B1B252B7C26007D846E /* cairo-image-compositor.c */,
 				90BC2B93252B7C27007D846E /* cairo-image-info-private.h */,
-				90BC2B51252B7C27007D846E /* cairo-image-info.c */,
 				90BC2B23252B7C26007D846E /* cairo-image-source.c */,
 				90BC2B2E252B7C26007D846E /* cairo-image-surface-inline.h */,
 				90BC2BE0252B7C28007D846E /* cairo-image-surface-private.h */,
 				90BC2A70252B7C25007D846E /* cairo-image-surface.c */,
-				90BC2AE2252B7C26007D846E /* cairo-lzw.c */,
 				90BC2B21252B7C26007D846E /* cairo-malloc-private.h */,
 				90BC2B00252B7C26007D846E /* cairo-mask-compositor.c */,
 				90BC2B3A252B7C27007D846E /* cairo-matrix.c */,
 				90BC2AE6252B7C26007D846E /* cairo-mempool-private.h */,
-				90BC2B22252B7C26007D846E /* cairo-mempool.c */,
 				90BC2BA8252B7C28007D846E /* cairo-mesh-pattern-rasterizer.c */,
 				90BC2BBC252B7C28007D846E /* cairo-misc.c */,
 				90BC2B5C252B7C27007D846E /* cairo-mono-scan-converter.c */,
@@ -1187,7 +1175,6 @@
 				90BC2C80252B7C2B007D846E /* cairo-error.c in Sources */,
 				90BC2D4A252B7C2F007D846E /* cairo-stroke-style.c in Sources */,
 				906D6BAD252B7F000025723B /* pixman-matrix.c in Sources */,
-				90BC2CB5252B7C2C007D846E /* cairo-mempool.c in Sources */,
 				90BC2CD7252B7C2D007D846E /* cairo-surface.c in Sources */,
 				906D6B94252B7F000025723B /* pixman-image.c in Sources */,
 				90BC2C32252B7C2A007D846E /* cairo-font-face-twin.c in Sources */,
@@ -1260,14 +1247,12 @@
 				90BC2C34252B7C2A007D846E /* cairo-contour.c in Sources */,
 				903A29992524ACDC0044CE1C /* SceneDelegate.m in Sources */,
 				90BC2C76252B7C2B007D846E /* cairo-rtree.c in Sources */,
-				90BC2CEF252B7C2D007D846E /* cairo-image-info.c in Sources */,
 				90BC2C6D252B7C2B007D846E /* cairo-shape-mask-compositor.c in Sources */,
 				906D6B96252B7F000025723B /* pixman-combine-float.c in Sources */,
 				90BC2CE3252B7C2D007D846E /* cairo-path-fixed.c in Sources */,
 				90BC2C60252B7C2B007D846E /* cairo-color.c in Sources */,
 				90BC2D39252B7C2E007D846E /* cairo-spans-compositor.c in Sources */,
 				90BC2C3C252B7C2A007D846E /* cairo-atomic.c in Sources */,
-				90BC2C6F252B7C2B007D846E /* cairo-lzw.c in Sources */,
 				90BC2D11252B7C2E007D846E /* cairo-tor-scan-converter.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1314,14 +1299,12 @@
 				90BC2D78252B7C2F007D846E /* cairo-path-stroke.c in Sources */,
 				90BC2D8C252B7C30007D846E /* cairo-polygon-intersect.c in Sources */,
 				90BC26DA252737CD007D846E /* rasterizer.cpp in Sources */,
-				90BC2CB6252B7C2C007D846E /* cairo-mempool.c in Sources */,
 				90BC2CA3252B7C2C007D846E /* cairo-traps-compositor.c in Sources */,
 				90BC26DC252737CD007D846E /* renderer.cpp in Sources */,
 				90BC2C5B252B7C2A007D846E /* cairo-region.c in Sources */,
 				90BC2C2E252B7C2A007D846E /* cairo-output-stream.c in Sources */,
 				90BC2C35252B7C2A007D846E /* cairo-contour.c in Sources */,
 				906D6BC7252B7F000025723B /* pixman-access-accessors.c in Sources */,
-				90BC2CF0252B7C2D007D846E /* cairo-image-info.c in Sources */,
 				906D6BE0252B7F000025723B /* pixman-edge.c in Sources */,
 				90BC2C7D252B7C2B007D846E /* cairo-analysis-surface.c in Sources */,
 				90BC2CDE252B7C2D007D846E /* cairo-traps.c in Sources */,
@@ -1402,7 +1385,6 @@
 				906D6BCD252B7F000025723B /* pixman-linear-gradient.c in Sources */,
 				90BC2CFA252B7C2D007D846E /* cairo-surface-fallback.c in Sources */,
 				90BC2CB4252B7C2C007D846E /* cairo-no-compositor.c in Sources */,
-				90BC2C70252B7C2B007D846E /* cairo-lzw.c in Sources */,
 				90BC2C9D252B7C2C007D846E /* cairo-font-face.c in Sources */,
 				90BC24812526058C007D846E /* main.cpp in Sources */,
 				90BC2CFC252B7C2D007D846E /* cairo-mono-scan-converter.c in Sources */,
