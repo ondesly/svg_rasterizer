@@ -54,11 +54,9 @@ set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo-mesh-pattern-rasterizer.c
     ${CAIRO_ROOT}/src/cairo-misc.c
     ${CAIRO_ROOT}/src/cairo-mono-scan-converter.c
-    ${CAIRO_ROOT}/src/cairo-mutex.c
     ${CAIRO_ROOT}/src/cairo-no-compositor.c
     ${CAIRO_ROOT}/src/cairo-observer.c
     ${CAIRO_ROOT}/src/cairo-output-stream.c
-    ${CAIRO_ROOT}/src/cairo-paginated-surface.c
     ${CAIRO_ROOT}/src/cairo-path-bounds.c
     ${CAIRO_ROOT}/src/cairo-path-fill.c
     ${CAIRO_ROOT}/src/cairo-path-fixed.c
@@ -79,7 +77,6 @@ set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo-rectangle.c
     ${CAIRO_ROOT}/src/cairo-rectangular-scan-converter.c
     ${CAIRO_ROOT}/src/cairo-region.c
-    ${CAIRO_ROOT}/src/cairo-rtree.c
     ${CAIRO_ROOT}/src/cairo-scaled-font.c
     ${CAIRO_ROOT}/src/cairo-shape-mask-compositor.c
     ${CAIRO_ROOT}/src/cairo-slope.c
@@ -88,9 +85,6 @@ set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo-spline.c
     ${CAIRO_ROOT}/src/cairo-stroke-dash.c
     ${CAIRO_ROOT}/src/cairo-stroke-style.c
-    ${CAIRO_ROOT}/src/cairo-surface-clipper.c
-    ${CAIRO_ROOT}/src/cairo-surface-fallback.c
-    ${CAIRO_ROOT}/src/cairo-surface-observer.c
     ${CAIRO_ROOT}/src/cairo-surface-offset.c
     ${CAIRO_ROOT}/src/cairo-surface-snapshot.c
     ${CAIRO_ROOT}/src/cairo-surface-subsurface.c
