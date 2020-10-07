@@ -87,10 +87,8 @@ set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo-stroke-style.c
     ${CAIRO_ROOT}/src/cairo-surface-offset.c
     ${CAIRO_ROOT}/src/cairo-surface-snapshot.c
-    ${CAIRO_ROOT}/src/cairo-surface-subsurface.c
     ${CAIRO_ROOT}/src/cairo-surface-wrapper.c
     ${CAIRO_ROOT}/src/cairo-surface.c
-    ${CAIRO_ROOT}/src/cairo-time.c
     ${CAIRO_ROOT}/src/cairo-tor-scan-converter.c
     ${CAIRO_ROOT}/src/cairo-tor22-scan-converter.c
     ${CAIRO_ROOT}/src/cairo-toy-font-face.c
@@ -99,7 +97,6 @@ set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo-tristrip.c
     ${CAIRO_ROOT}/src/cairo-unicode.c
     ${CAIRO_ROOT}/src/cairo-user-font.c
-    ${CAIRO_ROOT}/src/cairo-version.c
     ${CAIRO_ROOT}/src/cairo-wideint.c
     ${CAIRO_ROOT}/src/cairo.c)
 
