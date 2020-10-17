@@ -6,9 +6,11 @@
 #  Copyright © 2020 Dmitrii Torkhov. All rights reserved.
 #
 
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
-project(svg_rasterizer)
+project(svg_rasterizer 
+    VERSION 0.1
+    LANGUAGES C CXX)
 
 ################
 # Dependencies #
@@ -82,7 +84,18 @@ find_package(Stb)
 
 set(SRC_ROOT ${CMAKE_CURRENT_LIST_DIR}/src)
 
-include_directories(
+set(SRC
+    ${SRC_ROOT}/svg/rasterizer.cpp
+    ${SRC_ROOT}/svg/renderer.cpp)
+
+add_library(svg STATIC 
+    ${CAIRO_SRC}
+    ${PIXMAN_SRC}
+    ${PUGIXML_SRC}
+
+    ${SRC})
+
+target_include_directories(svg PRIVATE
     ${CAIRO_INCLUDE_DIRS}
     ${NUMERALS_INCLUDE_DIRS}
     ${PIXMAN_INCLUDE_DIRS}
@@ -92,9 +105,3 @@ include_directories(
     ${SRC_ROOT}
     ${SRC_ROOT}/cairo
     ${SRC_ROOT}/pixman)
-
-set(SRC
-    ${SRC_ROOT}/svg/rasterizer.cpp
-    ${SRC_ROOT}/svg/renderer.cpp)
-
-add_library(svg STATIC ${SRC} ${CAIRO_SRC} ${PIXMAN_SRC} ${PUGIXML_SRC})

@@ -21,28 +21,21 @@ rm -rf prebuilt
 # iOS #
 #######
 
-# iOS Arm
+# Arm
 
 rm -rf build
-mkdir build
-cd build
 
-cmake .. -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/ios/arm -DCMAKE_TOOLCHAIN_FILE=../toolchains/ios.toolchain.cmake -DPLATFORM="OS" -DDEPLOYMENT_TARGET="11.0" -DENABLE_BITCODE=FALSE -DENABLE_ARC=FALSE -DENABLE_VISIBILITY=FALSE -DENABLE_STRICT_TRY_COMPILE=FALSE
-make
+cmake -S . -B build -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/ios/arm -DCMAKE_TOOLCHAIN_FILE=toolchains/ios.toolchain.cmake -DPLATFORM="OS" -DDEPLOYMENT_TARGET="11.0" -DENABLE_BITCODE=FALSE -DENABLE_ARC=FALSE -DENABLE_VISIBILITY=FALSE -DENABLE_STRICT_TRY_COMPILE=FALSE
+cmake --build build -j 4
 
-# iOS x86
+# x86
 
-cd ..
 rm -rf build
-mkdir build
-cd build
 
-cmake .. -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/ios/x86 -DCMAKE_TOOLCHAIN_FILE=../toolchains/ios.toolchain.cmake -DPLATFORM="SIMULATOR64" -DDEPLOYMENT_TARGET="11.0" -DENABLE_BITCODE=FALSE -DENABLE_ARC=FALSE -DENABLE_VISIBILITY=FALSE -DENABLE_STRICT_TRY_COMPILE=FALSE
-make
+cmake -S . -B build -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/ios/x86 -DCMAKE_TOOLCHAIN_FILE=toolchains/ios.toolchain.cmake -DPLATFORM="SIMULATOR64" -DDEPLOYMENT_TARGET="11.0" -DENABLE_BITCODE=FALSE -DENABLE_ARC=FALSE -DENABLE_VISIBILITY=FALSE -DENABLE_STRICT_TRY_COMPILE=FALSE
+cmake --build build -j 4
 
-# iOS Fat
-
-cd ..
+# Fat
 
 lipo -create prebuilt/ios/arm/libsvg.a prebuilt/ios/x86/libsvg.a -output prebuilt/ios/libsvg.a
 rm -rf prebuilt/ios/arm
@@ -52,36 +45,27 @@ rm -rf prebuilt/ios/x86
 # Android #
 ###########
 
-# Android Arm64
+# Arm64
 
 rm -rf build
-mkdir build
-cd build
 
-cmake .. -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/android/arm64-v8a -DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake -DANDROID_PLATFORM=21 -DANDROID_ABI="arm64-v8a"
-make
+cmake -S . -B build -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/android/arm64-v8a -DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake -DANDROID_PLATFORM=21 -DANDROID_ABI="arm64-v8a"
+cmake --build build -j 4
 
-# Android Arm7
+# Arm
 
-cd ..
 rm -rf build
-mkdir build
-cd build
 
-cmake .. -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/android/armeabi-v7a -DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake -DANDROID_PLATFORM=21 -DANDROID_ABI="armeabi-v7a"
-make
+cmake -S . -B build -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/android/armeabi-v7a -DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake -DANDROID_PLATFORM=21 -DANDROID_ABI="armeabi-v7a"
+cmake --build build -j 4
 
-# Android x86
+# x86
 
-cd ..
 rm -rf build
-mkdir build
-cd build
 
-cmake .. -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/android/x86 -DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake -DANDROID_PLATFORM=21 -DANDROID_ABI="x86_64"
-make
+cmake -S . -B build -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/android/x86 -DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake -DANDROID_PLATFORM=21 -DANDROID_ABI="x86_64"
+cmake --build build -j 4
 
-#
+# Cleanup
 
-cd ..
 rm -rf build
