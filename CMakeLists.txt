@@ -66,7 +66,6 @@ FetchContent_MakeAvailable(cairo pixman numerals pugixml stb)
 # Build #
 #########
 
-set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
