@@ -66,11 +66,6 @@ FetchContent_MakeAvailable(cairo pixman numerals pugixml stb)
 # Build #
 #########
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-#
-
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 
 find_package(Cairo)
@@ -93,6 +88,11 @@ add_library(svg STATIC
     ${PUGIXML_SRC}
 
     ${SRC})
+
+set_target_properties(svg PROPERTIES
+    CXX_STANDARD 17
+    CXX_STANDARD_REQUIRED YES
+    CXX_EXTENSIONS NO)
 
 target_include_directories(svg PRIVATE
     ${CAIRO_INCLUDE_DIRS}
