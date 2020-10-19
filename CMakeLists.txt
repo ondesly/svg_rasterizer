@@ -19,7 +19,7 @@ project(svg_rasterizer
 include(FetchContent)
 
 set(FETCHCONTENT_QUIET FALSE)
-set(FETCHCONTENT_BASE_DIR ${CMAKE_CURRENT_LIST_DIR}/deps)
+set(FETCHCONTENT_BASE_DIR ${CMAKE_CURRENT_LIST_DIR}/extern)
 
 #
 
