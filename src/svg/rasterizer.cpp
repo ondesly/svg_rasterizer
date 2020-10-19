@@ -9,7 +9,7 @@
 
 #include "svg/renderer.h"
 
-#include "rasterizer.h"
+#include "svg/rasterizer.h"
 
 namespace {
 

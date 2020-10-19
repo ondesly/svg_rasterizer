@@ -101,6 +101,7 @@ target_include_directories(svg PRIVATE
     ${PUGIXML_INCLUDE_DIRS}
     ${STB_INCLUDE_DIRS}
 
+    ${CMAKE_CURRENT_LIST_DIR}/include
     ${SRC_ROOT}
     ${SRC_ROOT}/cairo
     ${SRC_ROOT}/pixman)

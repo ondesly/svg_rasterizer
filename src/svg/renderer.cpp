@@ -10,7 +10,7 @@
 #include <numerals/vector2.h>
 #include <pugixml.hpp>
 
-#include "renderer.h"
+#include "svg/renderer.h"
 
 namespace {
 

@@ -328,11 +328,11 @@
 		906D6C0D252B7FDF0025723B /* pugixml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pugixml.cpp; sourceTree = "<group>"; };
 		906D6C14252B801B0025723B /* stb_rect_pack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stb_rect_pack.h; path = "../deps/stb-src/stb_rect_pack.h"; sourceTree = "<group>"; };
 		906D6C1E252C98450025723B /* cairo-path-stroke-traps.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cairo-path-stroke-traps.c"; sourceTree = "<group>"; };
+		909A460A253DC7CF00C9E493 /* rasterizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rasterizer.h; path = ../../include/svg/rasterizer.h; sourceTree = "<group>"; };
+		909A460B253DC7CF00C9E493 /* renderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = renderer.h; path = ../../include/svg/renderer.h; sourceTree = "<group>"; };
 		90BC247E2526058C007D846E /* macos_rasterizer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = macos_rasterizer; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BC24802526058C007D846E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		90BC26D5252737CD007D846E /* renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = renderer.h; sourceTree = "<group>"; };
 		90BC26D6252737CD007D846E /* rasterizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rasterizer.cpp; sourceTree = "<group>"; };
-		90BC26D7252737CD007D846E /* rasterizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rasterizer.h; sourceTree = "<group>"; };
 		90BC26D8252737CD007D846E /* renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = renderer.cpp; sourceTree = "<group>"; };
 		90BC26F725273AC0007D846E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		90BC270525274850007D846E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -686,9 +686,9 @@
 			isa = PBXGroup;
 			children = (
 				90BC26D6252737CD007D846E /* rasterizer.cpp */,
-				90BC26D7252737CD007D846E /* rasterizer.h */,
+				909A460A253DC7CF00C9E493 /* rasterizer.h */,
 				90BC26D8252737CD007D846E /* renderer.cpp */,
-				90BC26D5252737CD007D846E /* renderer.h */,
+				909A460B253DC7CF00C9E493 /* renderer.h */,
 			);
 			path = svg;
 			sourceTree = "<group>";
@@ -1293,6 +1293,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../include\"",
 					"\"$(SRCROOT)/../src/pixman\"",
 					"\"$(SRCROOT)/../src/cairo\"",
 					"\"$(SRCROOT)/../src\"",
@@ -1371,6 +1372,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../include\"",
 					"\"$(SRCROOT)/../src/pixman\"",
 					"\"$(SRCROOT)/../src/cairo\"",
 					"\"$(SRCROOT)/../src\"",
