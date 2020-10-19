@@ -99,7 +99,3 @@ set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo-user-font.c
     ${CAIRO_ROOT}/src/cairo-wideint.c
     ${CAIRO_ROOT}/src/cairo.c)
-
-set_source_files_properties(${CAIRO_SRC}
-    PROPERTIES
-    COMPILE_FLAGS "-w")

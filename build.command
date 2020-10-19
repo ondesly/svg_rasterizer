@@ -26,7 +26,7 @@ rm -rf prebuilt
 rm -rf build
 
 cmake -S . -B build \
-	-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/ios/arm \
+	-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=$(dirname "$0")/prebuilt/ios/arm \
 	-DCMAKE_TOOLCHAIN_FILE=toolchains/ios.toolchain.cmake \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DPLATFORM="OS" \
@@ -42,7 +42,7 @@ cmake --build build -j 4
 rm -rf build
 
 cmake -S . -B build \
-	-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/ios/x86 \
+	-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=$(dirname "$0")/prebuilt/ios/x86 \
 	-DCMAKE_TOOLCHAIN_FILE=toolchains/ios.toolchain.cmake \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DPLATFORM="SIMULATOR64" \
@@ -68,7 +68,7 @@ rm -rf prebuilt/ios/x86
 rm -rf build
 
 cmake -S . -B build \
-	-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/android/arm64-v8a \
+	-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=$(dirname "$0")/prebuilt/android/arm64-v8a \
 	-DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DANDROID_PLATFORM=21 \
@@ -80,7 +80,7 @@ cmake --build build -j 4
 rm -rf build
 
 cmake -S . -B build \
-	-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/android/armeabi-v7a \
+	-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=$(dirname "$0")/prebuilt/android/armeabi-v7a \
 	-DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DANDROID_PLATFORM=21 \
@@ -92,7 +92,7 @@ cmake --build build -j 4
 rm -rf build
 
 cmake -S . -B build \
-	-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=../prebuilt/android/x86 \
+	-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=$(dirname "$0")/prebuilt/android/x86 \
 	-DCMAKE_TOOLCHAIN_FILE=$NDK_HOME/build/cmake/android.toolchain.cmake \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DANDROID_PLATFORM=21 \

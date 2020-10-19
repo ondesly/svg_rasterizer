@@ -76,32 +76,4 @@ find_package(Stb)
 
 #
 
-set(SRC_ROOT ${CMAKE_CURRENT_LIST_DIR}/src)
-
-set(SRC
-    ${SRC_ROOT}/svg/rasterizer.cpp
-    ${SRC_ROOT}/svg/renderer.cpp)
-
-add_library(svg STATIC 
-    ${CAIRO_SRC}
-    ${PIXMAN_SRC}
-    ${PUGIXML_SRC}
-
-    ${SRC})
-
-set_target_properties(svg PROPERTIES
-    CXX_STANDARD 17
-    CXX_STANDARD_REQUIRED YES
-    CXX_EXTENSIONS NO)
-
-target_include_directories(svg PRIVATE
-    ${CAIRO_INCLUDE_DIRS}
-    ${NUMERALS_INCLUDE_DIRS}
-    ${PIXMAN_INCLUDE_DIRS}
-    ${PUGIXML_INCLUDE_DIRS}
-    ${STB_INCLUDE_DIRS}
-
-    ${CMAKE_CURRENT_LIST_DIR}/include
-    ${SRC_ROOT}
-    ${SRC_ROOT}/cairo
-    ${SRC_ROOT}/pixman)
+add_subdirectory(src)

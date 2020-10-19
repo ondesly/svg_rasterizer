@@ -42,7 +42,3 @@ set(PIXMAN_SRC
     ${PIXMAN_ROOT}/pixman/pixman-solid-fill.c
     ${PIXMAN_ROOT}/pixman/pixman-trap.c
     ${PIXMAN_ROOT}/pixman/pixman-utils.c)
-
-set_source_files_properties(${PIXMAN_SRC}
-    PROPERTIES
-    COMPILE_FLAGS "-w")
