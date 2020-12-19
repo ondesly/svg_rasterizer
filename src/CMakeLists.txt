@@ -38,3 +38,20 @@ target_include_directories(svg PRIVATE
     ../include
     cairo
     pixman)
+
+#
+
+set(PUBLIC_HEADERS 
+    ../include/svg/rasterizer.h
+    ../include/svg/renderer.h)
+
+install(TARGETS svg
+        EXPORT svg-config
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib
+        RUNTIME DESTINATION bin
+        INCLUDES DESTINATION include)
+
+install(FILES ${PUBLIC_HEADERS} DESTINATION include/svg)
+
+install(EXPORT svg-config DESTINATION lib/cmake/svg)
