@@ -25,7 +25,7 @@ namespace {
 
 void svg::renderer::render(unsigned short *data, const cc::size_t2 &size, const item &item) {
     auto data8 = reinterpret_cast<unsigned char *>(data);
-    auto surface = cairo_image_surface_create_for_data(data8, CAIRO_FORMAT_RGB16_565, int(size.w), int(size.h), int(size.w * bpc::rgb565));
+    auto surface = cairo_image_surface_create_for_data(data8, CAIRO_FORMAT_RGB16_565, int(size.width), int(size.height), int(size.width * bpc::rgb565));
     auto cr = cairo_create(surface);
 
     //
@@ -44,7 +44,7 @@ void svg::renderer::render(unsigned short *data, const cc::size_t2 &size, const 
 
 void svg::renderer::render(unsigned int *data, const cc::size_t2 &size, const item &item) {
     auto data8 = reinterpret_cast<unsigned char *>(data);
-    auto surface = cairo_image_surface_create_for_data(data8, CAIRO_FORMAT_ARGB32, int(size.w), int(size.h), int(size.w * bpc::rgba8888));
+    auto surface = cairo_image_surface_create_for_data(data8, CAIRO_FORMAT_ARGB32, int(size.width), int(size.height), int(size.width * bpc::rgba8888));
     auto cr = cairo_create(surface);
 
     //
@@ -65,9 +65,9 @@ void svg::renderer::render(cairo_t *cr, const pugi::xml_node &root, const cc::si
     cairo_save(cr);
 
     cairo_move_to(cr, rect.x, rect.y);
-    cairo_rel_line_to(cr, rect.w, 0.);
-    cairo_rel_line_to(cr, 0., rect.h);
-    cairo_rel_line_to(cr, -rect.w, 0.);
+    cairo_rel_line_to(cr, rect.width, 0.);
+    cairo_rel_line_to(cr, 0., rect.height);
+    cairo_rel_line_to(cr, -rect.width, 0.);
     cairo_clip(cr);
 
     cairo_translate(cr, rect.x, rect.y);
@@ -115,18 +115,18 @@ void svg::renderer::extrude(unsigned char *data, const cc::size_t2 &size, size_t
 
     // V
 
-    for (auto i = rect.y - 1; i <= rect.y + rect.h + 1; ++i) {
+    for (auto i = rect.y - 1; i <= rect.y + rect.height + 1; ++i) {
         for (auto j = 0; j < padding; ++j) {
             std::copy_n(
-                    data + (rect.x + i * size.w) * bpc,
+                    data + (rect.x + i * size.width) * bpc,
                     bpc,
-                    data + (rect.x - 1 - j + i * size.w) * bpc
+                    data + (rect.x - 1 - j + i * size.width) * bpc
             );
 
             std::copy_n(
-                    data + (rect.x + rect.w - 1 + i * size.w) * bpc,
+                    data + (rect.x + rect.width - 1 + i * size.width) * bpc,
                     bpc,
-                    data + (rect.x + rect.w + j + i * size.w) * bpc
+                    data + (rect.x + rect.width + j + i * size.width) * bpc
             );
         }
     }
@@ -135,15 +135,15 @@ void svg::renderer::extrude(unsigned char *data, const cc::size_t2 &size, size_t
 
     for (auto i = 0; i < padding; ++i) {
         std::copy_n(
-                data + (rect.x - padding + rect.y * size.w) * bpc,
-                (rect.w + padding * 2) * bpc,
-                data + (rect.x - padding + (rect.y - 1 - i) * size.w) * bpc
+                data + (rect.x - padding + rect.y * size.width) * bpc,
+                (rect.width + padding * 2) * bpc,
+                data + (rect.x - padding + (rect.y - 1 - i) * size.width) * bpc
         );
 
         std::copy_n(
-                data + (rect.x - padding + (rect.y + rect.h - 1) * size.w) * bpc,
-                (rect.w + padding * 2) * bpc,
-                data + (rect.x - padding + (rect.y + rect.h + i) * size.w) * bpc
+                data + (rect.x - padding + (rect.y + rect.height - 1) * size.width) * bpc,
+                (rect.width + padding * 2) * bpc,
+                data + (rect.x - padding + (rect.y + rect.height + i) * size.width) * bpc
         );
     }
 }
