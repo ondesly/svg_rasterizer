@@ -12,6 +12,8 @@ project(svg_rasterizer
     VERSION 0.1
     LANGUAGES C CXX)
 
+set(CMAKE_XCODE_ATTRIBUTE_EXCLUDED_ARCHS[sdk=iphonesimulator*] "arm64")
+
 ################
 # Dependencies #
 ################
