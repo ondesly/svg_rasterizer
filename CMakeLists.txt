@@ -69,7 +69,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 find_package(Pixman REQUIRED)
 find_package(Cairo REQUIRED)
 find_package(Numerals)
-find_package(PugiXml)
 find_package(Stb)
 
 #

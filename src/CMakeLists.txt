@@ -6,20 +6,12 @@
 #  Copyright © 2020-2021 Dmitrii Torkhov. All rights reserved.
 #
 
-set_source_files_properties(${PUGIXML_SRC} PROPERTIES COMPILE_FLAGS "-w")
-
-#
-
-set(SRC
-    svg/rasterizer.cpp
-    svg/renderer.cpp)
-
 add_library(svg STATIC
-    ${PUGIXML_SRC}
+    svg/rasterizer.cpp
+    svg/renderer.cpp
+)
 
-    ${SRC})
-
-target_link_libraries(svg PRIVATE cairo)
+target_link_libraries(svg PRIVATE cairo pugixml)
 
 set_target_properties(svg PROPERTIES
     CXX_STANDARD 17
@@ -28,7 +20,6 @@ set_target_properties(svg PROPERTIES
 
 target_include_directories(svg PRIVATE
     ${NUMERALS_INCLUDE_DIRS}
-    ${PUGIXML_INCLUDE_DIRS}
     ${STB_INCLUDE_DIRS}
 
     ../include)
