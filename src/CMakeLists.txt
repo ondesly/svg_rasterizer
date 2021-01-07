@@ -11,17 +11,14 @@ add_library(svg STATIC
     svg/renderer.cpp
 )
 
-target_link_libraries(svg PRIVATE cairo pugixml numerals)
+target_link_libraries(svg PRIVATE cairo pugixml stb numerals)
 
 set_target_properties(svg PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED YES
     CXX_EXTENSIONS NO)
 
-target_include_directories(svg PRIVATE
-    ${STB_INCLUDE_DIRS}
-
-    ../include)
+target_include_directories(svg PRIVATE ../include)
 
 #
 
