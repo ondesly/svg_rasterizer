@@ -3,14 +3,32 @@
 #  svg_rasterizer
 #
 #  Created by Dmitrii Torkhov <dmitriitorkhov@gmail.com> on 25.07.2020.
-#  Copyright © 2020 Dmitrii Torkhov. All rights reserved.
+#  Copyright © 2020-2021 Dmitrii Torkhov. All rights reserved.
 #
-
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DHAVE_CONFIG_H=0 -DHAVE_UINT64_T=1 -DHAVE_STDINT_H=1 -DCAIRO_NO_MUTEX=1 -DCAIRO_FEATURES_H=1")
 
 set(CAIRO_ROOT ${cairo_SOURCE_DIR})
 
-set(CAIRO_INCLUDE_DIRS ${CAIRO_ROOT} ${CAIRO_ROOT}/src)
+add_definitions(-DHAVE_CONFIG_H)
+add_definitions(-DCAIRO_NO_MUTEX)
+add_definitions(-DCAIRO_FEATURES_H)
+
+# Config
+
+set(HAVE_STDINT_H 1)
+set(HAVE_UINT64_T 1)
+
+FILE(READ ${CAIRO_ROOT}/config.h.in CAIRO_CONFIG)
+STRING(REGEX REPLACE "#undef ([A-Z0-9_]+)" "#cmakedefine \\1 @\\1@" CAIRO_CONFIG_MOD ${CAIRO_CONFIG})
+FILE(WRITE ${PROJECT_BINARY_DIR}/include/cairo/config.h.in ${CAIRO_CONFIG_MOD})
+
+FILE(WRITE ${PROJECT_BINARY_DIR}/include/cairo/cairo-features.h "")
+
+configure_file (
+    ${PROJECT_BINARY_DIR}/include/cairo/config.h.in
+    ${PROJECT_BINARY_DIR}/include/cairo/config.h
+)
+
+#
 
 set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo-analysis-surface.c
@@ -49,6 +67,7 @@ set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo-image-compositor.c
     ${CAIRO_ROOT}/src/cairo-image-source.c
     ${CAIRO_ROOT}/src/cairo-image-surface.c
+    ${CAIRO_ROOT}/src/cairo-line.c
     ${CAIRO_ROOT}/src/cairo-mask-compositor.c
     ${CAIRO_ROOT}/src/cairo-matrix.c
     ${CAIRO_ROOT}/src/cairo-mesh-pattern-rasterizer.c
@@ -98,4 +117,18 @@ set(CAIRO_SRC
     ${CAIRO_ROOT}/src/cairo-unicode.c
     ${CAIRO_ROOT}/src/cairo-user-font.c
     ${CAIRO_ROOT}/src/cairo-wideint.c
-    ${CAIRO_ROOT}/src/cairo.c)
+    ${CAIRO_ROOT}/src/cairo.c
+)
+
+set_source_files_properties(${CAIRO_SRC} PROPERTIES COMPILE_FLAGS "-w")
+
+#
+
+add_library(cairo STATIC ${CAIRO_SRC})
+
+target_link_libraries(cairo PRIVATE pixman)
+
+target_include_directories(cairo PUBLIC
+    $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include/cairo>
+    $<BUILD_INTERFACE:${CAIRO_ROOT}/src>
+)

@@ -3,7 +3,7 @@
 #  svg_rasterizer
 #
 #  Created by Dmitrii Torkhov <dmitriitorkhov@gmail.com> on 25.07.2020.
-#  Copyright © 2020 Dmitrii Torkhov. All rights reserved.
+#  Copyright © 2020-2021 Dmitrii Torkhov. All rights reserved.
 #
 
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
@@ -27,17 +27,13 @@ set(FETCHCONTENT_BASE_DIR ${CMAKE_CURRENT_LIST_DIR}/extern)
 
 FetchContent_Declare(
     cairo
-    GIT_REPOSITORY  git://anongit.freedesktop.org/git/cairo
-    GIT_TAG         1.12.10
-    GIT_SHALLOW     TRUE
-    GIT_PROGRESS    TRUE)
+    URL https://www.cairographics.org/releases/cairo-1.16.0.tar.xz
+)
 
 FetchContent_Declare(
     pixman
-    GIT_REPOSITORY  git://anongit.freedesktop.org/git/pixman.git
-    GIT_TAG         pixman-0.32.4
-    GIT_SHALLOW     TRUE
-    GIT_PROGRESS    TRUE)
+    URL https://www.cairographics.org/releases/pixman-0.40.0.tar.gz
+)
 
 FetchContent_Declare(
     numerals
@@ -70,9 +66,9 @@ FetchContent_MakeAvailable(cairo pixman numerals pugixml stb)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 
-find_package(Cairo)
+find_package(Pixman REQUIRED)
+find_package(Cairo REQUIRED)
 find_package(Numerals)
-find_package(Pixman)
 find_package(PugiXml)
 find_package(Stb)
 

@@ -3,16 +3,31 @@
 #  svg_rasterizer
 #
 #  Created by Dmitrii Torkhov <dmitriitorkhov@gmail.com> on 25.07.2020.
-#  Copyright © 2020 Dmitrii Torkhov. All rights reserved.
+#  Copyright © 2020-2021 Dmitrii Torkhov. All rights reserved.
 #
-
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DPACKAGE=\"pixman\" -DPIXMAN_NO_TLS=1 -DPIXMAN_VERSION=0 -DPIXMAN_VERSION_STRING=\"0\"")
 
 set(PIXMAN_ROOT ${pixman_SOURCE_DIR})
 
-set(PIXMAN_INCLUDE_DIRS ${PIXMAN_ROOT}/pixman)
+add_definitions(-DHAVE_CONFIG_H)
+add_definitions(-DPIXMAN_NO_TLS)
+
+# Config
+
+set(PACKAGE pixman)
+
+FILE(READ ${PIXMAN_ROOT}/config.h.in PIXMAN_CONFIG)
+STRING(REGEX REPLACE "#undef ([A-Z0-9_]+)" "#cmakedefine \\1 @\\1@" PIXMAN_CONFIG_MOD ${PIXMAN_CONFIG})
+FILE(WRITE ${PROJECT_BINARY_DIR}/include/pixman/config.h.in "${PIXMAN_CONFIG_MOD}")
+
+configure_file (
+    ${PROJECT_BINARY_DIR}/include/pixman/config.h.in
+    ${PROJECT_BINARY_DIR}/include/pixman/config.h
+)
+
+#
 
 set(PIXMAN_SRC
+    ${PIXMAN_ROOT}/pixman/pixman.h
     ${PIXMAN_ROOT}/pixman/pixman.c
     ${PIXMAN_ROOT}/pixman/pixman-access-accessors.c
     ${PIXMAN_ROOT}/pixman/pixman-access.c
@@ -41,4 +56,16 @@ set(PIXMAN_SRC
     ${PIXMAN_ROOT}/pixman/pixman-region32.c
     ${PIXMAN_ROOT}/pixman/pixman-solid-fill.c
     ${PIXMAN_ROOT}/pixman/pixman-trap.c
-    ${PIXMAN_ROOT}/pixman/pixman-utils.c)
+    ${PIXMAN_ROOT}/pixman/pixman-utils.c
+)
+
+set_source_files_properties(${PIXMAN_SRC} PROPERTIES COMPILE_FLAGS "-w")
+
+#
+
+add_library(pixman STATIC ${PIXMAN_SRC})
+
+target_include_directories(pixman PUBLIC 
+    $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include/pixman>
+    $<BUILD_INTERFACE:${PIXMAN_ROOT}/pixman>
+)
