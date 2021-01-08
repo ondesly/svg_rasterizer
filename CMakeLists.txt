@@ -9,8 +9,8 @@
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
 project(svg_texture_packer
-    VERSION 0.1
-    LANGUAGES C CXX)
+        VERSION 0.1
+        LANGUAGES C CXX)
 
 set(CMAKE_XCODE_ATTRIBUTE_EXCLUDED_ARCHS[sdk=iphonesimulator*] "arm64")
 
@@ -26,39 +26,37 @@ set(FETCHCONTENT_BASE_DIR ${CMAKE_CURRENT_LIST_DIR}/extern)
 #
 
 FetchContent_Declare(
-    cairo
-    URL https://www.cairographics.org/releases/cairo-1.16.0.tar.xz
-)
+        cairo
+        URL https://www.cairographics.org/releases/cairo-1.16.0.tar.xz)
 
 FetchContent_Declare(
-    pixman
-    URL https://www.cairographics.org/releases/pixman-0.40.0.tar.gz
-)
+        pixman
+        URL https://www.cairographics.org/releases/pixman-0.40.0.tar.gz)
 
 FetchContent_Declare(
-    numerals
-    GIT_REPOSITORY  https://github.com/ondesly/numerals.git
-    GIT_TAG         1.0
-    GIT_SHALLOW     TRUE
-    GIT_PROGRESS    TRUE)
+        pugixml
+        GIT_REPOSITORY https://github.com/zeux/pugixml.git
+        GIT_TAG v1.10
+        GIT_SHALLOW TRUE
+        GIT_PROGRESS TRUE)
 
 FetchContent_Declare(
-    pugixml
-    GIT_REPOSITORY  https://github.com/zeux/pugixml.git
-    GIT_TAG         v1.10
-    GIT_SHALLOW     TRUE
-    GIT_PROGRESS    TRUE)
+        stb
+        GIT_REPOSITORY https://github.com/nothings/stb.git
+        GIT_TAG b42009b3b9d4ca35bc703f5310eedc74f584be58
+        GIT_SHALLOW TRUE
+        GIT_PROGRESS TRUE)
 
 FetchContent_Declare(
-    stb
-    GIT_REPOSITORY  https://github.com/nothings/stb.git
-    GIT_TAG         b42009b3b9d4ca35bc703f5310eedc74f584be58
-    GIT_SHALLOW     TRUE
-    GIT_PROGRESS    TRUE)
+        numerals
+        GIT_REPOSITORY https://github.com/ondesly/numerals.git
+        GIT_TAG 1.0
+        GIT_SHALLOW TRUE
+        GIT_PROGRESS TRUE)
 
 #
 
-FetchContent_MakeAvailable(cairo pixman numerals pugixml stb)
+FetchContent_MakeAvailable(cairo pixman pugixml stb numerals)
 
 #########
 # Build #
