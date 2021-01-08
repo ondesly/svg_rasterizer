@@ -1,5 +1,9 @@
 //
-// Created by Dmitrii Torkhov <dmitriitorkhov@gmail.com> on 23.07.2020.
+//  packer.h
+//  svg_texture_packer
+//
+//  Created by Dmitrii Torkhov <dmitriitorkhov@gmail.com> on 23.07.2020.
+//  Copyright © 2020-2021 Dmitrii Torkhov. All rights reserved.
 //
 
 #pragma once
