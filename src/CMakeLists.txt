@@ -10,14 +10,16 @@ add_library(svg STATIC
         svg/packer.cpp
         svg/renderer.cpp)
 
-target_link_libraries(svg PRIVATE cairo pugixml stb numerals)
+target_link_libraries(svg PUBLIC cairo pugixml stb numerals)
 
 set_target_properties(svg PROPERTIES
         CXX_STANDARD 17
         CXX_STANDARD_REQUIRED YES
         CXX_EXTENSIONS NO)
 
-target_include_directories(svg PRIVATE ../include)
+target_include_directories(svg PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/../include>
+        $<INSTALL_INTERFACE:include>)
 
 #
 
