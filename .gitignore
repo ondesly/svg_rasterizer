@@ -5,3 +5,7 @@ extern
 prebuilt
 test_app/svg_rasterizer.xcodeproj/xcuserdata
 test_app/svg_rasterizer.xcodeproj/project.xcworkspace/xcuserdata
+
+# Ignore files built by Jet Brains
+.idea
+cmake-build-debug
