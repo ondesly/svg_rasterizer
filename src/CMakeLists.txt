@@ -26,7 +26,7 @@ set(PUBLIC_HEADERS
     ../include/svg/rasterizer.h
     ../include/svg/renderer.h)
 
-install(TARGETS svg cairo pixman
+install(TARGETS svg cairo pixman stb
         EXPORT svg-config
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib
