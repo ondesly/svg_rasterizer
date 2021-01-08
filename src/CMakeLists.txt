@@ -7,7 +7,7 @@
 #
 
 add_library(svg STATIC
-    svg/rasterizer.cpp
+    svg/packer.cpp
     svg/renderer.cpp
 )
 
@@ -22,8 +22,8 @@ target_include_directories(svg PRIVATE ../include)
 
 #
 
-set(PUBLIC_HEADERS 
-    ../include/svg/rasterizer.h
+set(PUBLIC_HEADERS
+    ../include/svg/packer.h
     ../include/svg/renderer.h)
 
 install(TARGETS svg cairo pixman stb

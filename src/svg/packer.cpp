@@ -9,7 +9,7 @@
 
 #include "svg/renderer.h"
 
-#include "svg/rasterizer.h"
+#include "svg/packer.h"
 
 namespace {
 
@@ -25,14 +25,14 @@ namespace {
 
 }
 
-svg::rasterizer::rasterizer(size_t max_texture_size) {
+svg::packer::packer(size_t max_texture_size) {
     m_context = new stbrp_context;
     m_nodes = new stbrp_node[max_texture_size];
 
     stbrp_init_target(m_context, int(max_texture_size), int(max_texture_size), m_nodes, int(max_texture_size));
 }
 
-svg::rasterizer::~rasterizer() {
+svg::packer::~packer() {
     for (auto item : m_items) {
         delete item.document;
     }
@@ -42,7 +42,7 @@ svg::rasterizer::~rasterizer() {
     delete m_context;
 }
 
-void svg::rasterizer::render(unsigned short *data) {
+void svg::packer::render(unsigned short *data) {
     renderer renderer;
 
     for (const auto &item : m_items) {
@@ -50,7 +50,7 @@ void svg::rasterizer::render(unsigned short *data) {
     }
 }
 
-void svg::rasterizer::render(unsigned int *data) {
+void svg::packer::render(unsigned int *data) {
     renderer renderer;
 
     for (const auto &item : m_items) {
@@ -58,7 +58,7 @@ void svg::rasterizer::render(unsigned int *data) {
     }
 }
 
-void svg::rasterizer::pack() {
+void svg::packer::pack() {
     m_rects = new stbrp_rect[m_items.size()];
 
     auto rect = m_rects;
@@ -85,20 +85,20 @@ void svg::rasterizer::pack() {
     }
 }
 
-void svg::rasterizer::make_size_pow_of_2() {
+void svg::packer::make_size_pow_of_2() {
     m_size.width = pow_of_2(m_size.width);
     m_size.height = pow_of_2(m_size.height);
 }
 
-const cc::size_t2 &svg::rasterizer::get_size() const {
+const cc::size_t2 &svg::packer::get_size() const {
     return m_size;
 }
 
-const cc::size_t4 &svg::rasterizer::get_rect(size_t index) const {
+const cc::size_t4 &svg::packer::get_rect(size_t index) const {
     return m_items[index].rect;
 }
 
-void svg::rasterizer::add(const std::string &content, const cc::size_t2 &size, size_t padding) {
+void svg::packer::add(const std::string &content, const cc::size_t2 &size, size_t padding) {
     auto document = parse_content(content);
 
     if (!document) {
@@ -127,7 +127,7 @@ void svg::rasterizer::add(const std::string &content, const cc::size_t2 &size, s
     m_items.push_back(item);
 }
 
-pugi::xml_document *svg::rasterizer::parse_content(const std::string &content) {
+pugi::xml_document *svg::packer::parse_content(const std::string &content) {
     auto document = new pugi::xml_document;
     const auto result = document->load_string(content.c_str());
 
@@ -139,7 +139,7 @@ pugi::xml_document *svg::rasterizer::parse_content(const std::string &content) {
     }
 }
 
-cc::float4 svg::rasterizer::parse_view_box(const char *s) {
+cc::float4 svg::packer::parse_view_box(const char *s) {
     cc::float4 box;
     std::sscanf(s, "%f %f %f %f", &box.x, &box.y, &box.width, &box.height);
     return box;

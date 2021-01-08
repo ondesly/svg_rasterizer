@@ -24,12 +24,12 @@ namespace svg {
 
     struct item;
 
-    class rasterizer {
+    class packer {
     public:
 
-        rasterizer(size_t max_texture_size);
+        packer(size_t max_texture_size);
 
-        ~rasterizer();
+        ~packer();
 
     public:
 
