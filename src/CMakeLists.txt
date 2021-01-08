@@ -27,7 +27,7 @@ set(PUBLIC_HEADERS
         ../include/svg/packer.h
         ../include/svg/renderer.h)
 
-install(TARGETS svg cairo pixman stb
+install(TARGETS svg cairo pixman pugixml stb
         EXPORT svg-config
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib
