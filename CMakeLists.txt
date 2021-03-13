@@ -9,7 +9,7 @@
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
 project(svg_texture_packer
-        VERSION 1.0.0
+        VERSION 1.0.1
         LANGUAGES C CXX)
 
 set(CMAKE_XCODE_ATTRIBUTE_EXCLUDED_ARCHS[sdk=iphonesimulator*] "arm64")
