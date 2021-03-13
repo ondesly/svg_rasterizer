@@ -1,5 +1,5 @@
 //
-//  main.cpp
+//  test_pack.cpp
 //  svg_texture_packer
 //
 //  Created by Dmitrii Torkhov <dmitriitorkhov@gmail.com> on 08.01.2021.
