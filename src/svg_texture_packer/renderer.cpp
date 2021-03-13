@@ -14,7 +14,7 @@
 #include <vectors/vec2.h>
 #include <pugixml.hpp>
 
-#include "svg/renderer.h"
+#include "svg_texture_packer/renderer.h"
 
 namespace {
 

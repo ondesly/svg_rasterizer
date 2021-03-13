@@ -11,9 +11,9 @@
 #include <pugixml.hpp>
 #include <stb_rect_pack.h>
 
-#include "svg/renderer.h"
+#include "svg_texture_packer/renderer.h"
 
-#include "svg/packer.h"
+#include "svg_texture_packer/packer.h"
 
 namespace {
 

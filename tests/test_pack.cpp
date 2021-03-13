@@ -8,7 +8,7 @@
 
 #include <sstream>
 
-#include <svg/packer.h>
+#include <svg_texture_packer/packer.h>
 
 namespace {
 

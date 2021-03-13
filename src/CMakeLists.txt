@@ -13,8 +13,8 @@ find_package(Stb REQUIRED)
 #
 
 add_library(svg_texture_packer STATIC
-        svg/packer.cpp
-        svg/renderer.cpp)
+        svg_texture_packer/packer.cpp
+        svg_texture_packer/renderer.cpp)
 
 target_link_libraries(svg_texture_packer PUBLIC cairo pugixml stb vectors)
 
@@ -23,8 +23,8 @@ target_link_libraries(svg_texture_packer PUBLIC cairo pugixml stb vectors)
 set(INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/../include)
 
 set(PUBLIC_HEADERS
-        ${INCLUDE_DIR}/svg/packer.h
-        ${INCLUDE_DIR}/svg/renderer.h)
+        ${INCLUDE_DIR}/svg_texture_packer/packer.h
+        ${INCLUDE_DIR}/svg_texture_packer/renderer.h)
 
 set_target_properties(svg_texture_packer PROPERTIES PUBLIC_HEADER "${PUBLIC_HEADERS}")
 
