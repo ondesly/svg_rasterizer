@@ -6,6 +6,12 @@
 #  Copyright © 2020-2021 Dmitrii Torkhov. All rights reserved.
 #
 
+find_package(Pixman REQUIRED)
+find_package(Cairo REQUIRED)
+find_package(Stb REQUIRED)
+
+#
+
 add_library(svg STATIC
         svg/packer.cpp
         svg/renderer.cpp)

@@ -18,10 +18,11 @@ set(CMAKE_XCODE_ATTRIBUTE_EXCLUDED_ARCHS[sdk=iphonesimulator*] "arm64")
 # Dependencies #
 ################
 
-include(FetchContent)
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 
-set(FETCHCONTENT_QUIET FALSE)
-set(FETCHCONTENT_BASE_DIR ${CMAKE_CURRENT_LIST_DIR}/extern)
+#
+
+include(FetchContent)
 
 #
 
@@ -62,14 +63,6 @@ FetchContent_MakeAvailable(cairo pixman pugixml stb numerals)
 # Build #
 #########
 
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
-
-find_package(Pixman REQUIRED)
-find_package(Cairo REQUIRED)
-find_package(Stb REQUIRED)
-
-#
-
 add_subdirectory(src)
 
 ###########
@@ -78,6 +71,6 @@ add_subdirectory(src)
 
 enable_testing()
 
-if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
+if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
     add_subdirectory(tests)
-endif()
+endif ()
