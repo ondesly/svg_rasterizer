@@ -94,15 +94,15 @@ void svg::packer::make_size_pow_of_2() {
     m_size.height = pow_of_2(m_size.height);
 }
 
-const cc::size_t2 &svg::packer::get_size() const {
+const svg::size_t2 &svg::packer::get_size() const {
     return m_size;
 }
 
-const cc::size_t4 &svg::packer::get_rect(size_t index) const {
+const svg::size_t4 &svg::packer::get_rect(size_t index) const {
     return m_items[index].rect;
 }
 
-void svg::packer::add(const std::string &content, const cc::size_t2 &size, size_t padding) {
+void svg::packer::add(const std::string &content, const svg::size_t2 &size, size_t padding) {
     auto document = parse_content(content);
 
     if (!document) {
@@ -143,8 +143,8 @@ pugi::xml_document *svg::packer::parse_content(const std::string &content) {
     }
 }
 
-cc::float4 svg::packer::parse_view_box(const char *s) {
-    cc::float4 box;
+svg::float4 svg::packer::parse_view_box(const char *s) {
+    float4 box;
     std::sscanf(s, "%f %f %f %f", &box.x, &box.y, &box.width, &box.height);
     return box;
 }

@@ -11,7 +11,7 @@
 #include <vector>
 
 #include <cairo.h>
-#include <numerals/vector2.h>
+#include <vectors/vec2.h>
 #include <pugixml.hpp>
 
 #include "svg/renderer.h"
@@ -27,7 +27,7 @@ namespace {
 
 }
 
-void svg::renderer::render(unsigned short *data, const cc::size_t2 &size, const item &item) {
+void svg::renderer::render(unsigned short *data, const svg::size_t2 &size, const item &item) {
     auto data8 = reinterpret_cast<unsigned char *>(data);
     auto surface = cairo_image_surface_create_for_data(data8, CAIRO_FORMAT_RGB16_565, int(size.width), int(size.height), int(size.width * bpc::rgb565));
     auto cr = cairo_create(surface);
@@ -46,7 +46,7 @@ void svg::renderer::render(unsigned short *data, const cc::size_t2 &size, const 
     extrude(data8, size, bpc::rgb565, item.rect, item.padding);
 }
 
-void svg::renderer::render(unsigned int *data, const cc::size_t2 &size, const item &item) {
+void svg::renderer::render(unsigned int *data, const svg::size_t2 &size, const item &item) {
     auto data8 = reinterpret_cast<unsigned char *>(data);
     auto surface = cairo_image_surface_create_for_data(data8, CAIRO_FORMAT_ARGB32, int(size.width), int(size.height), int(size.width * bpc::rgba8888));
     auto cr = cairo_create(surface);
@@ -65,7 +65,7 @@ void svg::renderer::render(unsigned int *data, const cc::size_t2 &size, const it
     extrude(data8, size, bpc::rgba8888, item.rect, item.padding);
 }
 
-void svg::renderer::render(cairo_t *cr, const pugi::xml_node &root, const cc::size_t4 &rect, float scale, const cc::size_t4 &ci) {
+void svg::renderer::render(cairo_t *cr, const pugi::xml_node &root, const svg::size_t4 &rect, float scale, const svg::size_t4 &ci) {
     cairo_save(cr);
 
     cairo_move_to(cr, rect.x, rect.y);
@@ -115,7 +115,7 @@ void svg::renderer::render(cairo_t *cr, const pugi::xml_node &root, const cc::si
     cairo_restore(cr);
 }
 
-void svg::renderer::extrude(unsigned char *data, const cc::size_t2 &size, size_t bpc, const cc::size_t4 &rect, size_t padding) {
+void svg::renderer::extrude(unsigned char *data, const svg::size_t2 &size, size_t bpc, const svg::size_t4 &rect, size_t padding) {
 
     // V
 

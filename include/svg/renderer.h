@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <numerals/vector4.h>
+#include <vectors/vec4.h>
 
 struct _cairo;
 typedef struct _cairo cairo_t;
@@ -16,11 +16,10 @@ typedef struct _cairo cairo_t;
 struct _cairo_surface;
 typedef struct _cairo_surface cairo_surface_t;
 
-namespace cc {
+namespace oo {
 
     template<class T, class S>
-    struct vector2;
-    using size_t2 = vector2<size_t, size_t>;
+    struct vec2;
 
 }
 
@@ -32,10 +31,13 @@ namespace pugi {
 
 namespace svg {
 
+    using size_t2 = oo::vec2<size_t, size_t>;
+    using size_t4 = oo::vec4<size_t>;
+
     struct item {
 
         pugi::xml_document *document;
-        cc::size_t4 rect;
+        size_t4 rect;
         size_t padding;
         float scale;
 
@@ -44,9 +46,9 @@ namespace svg {
     class renderer {
     public:
 
-        void render(unsigned short *data, const cc::size_t2 &size, const item &item);
+        void render(unsigned short *data, const size_t2 &size, const item &item);
 
-        void render(unsigned int *data, const cc::size_t2 &size, const item &item);
+        void render(unsigned int *data, const size_t2 &size, const item &item);
 
     private:
 
@@ -75,13 +77,13 @@ namespace svg {
 
     private:
 
-        using double4 = cc::vector4<double>;
+        using double4 = oo::vec4<double>;
 
     private:
 
-        void render(cairo_t *cr, const pugi::xml_node &root, const cc::size_t4 &rect, float scale, const cc::size_t4 &ci);
+        void render(cairo_t *cr, const pugi::xml_node &root, const size_t4 &rect, float scale, const size_t4 &ci);
 
-        void extrude(unsigned char *data, const cc::size_t2 &size, size_t bpc, const cc::size_t4 &rect, size_t padding);
+        void extrude(unsigned char *data, const size_t2 &size, size_t bpc, const size_t4 &rect, size_t padding);
 
         double4 parse_color(const char *fill, const char *opacity);
 
@@ -104,7 +106,7 @@ namespace svg {
         void render_ellipse(cairo_t *cr, const pugi::xml_node &node);
 
         void arc(cairo_t *cr, double rx, double ry, double rotation, long large_arc_flag, long sweep_flag,
-                double x, double y, double x0, double y0);
+                 double x, double y, double x0, double y0);
 
         void transform(double angle, double x, double y, double &dst_x, double &dst_y);
 

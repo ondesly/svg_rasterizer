@@ -49,15 +49,15 @@ FetchContent_Declare(
         GIT_PROGRESS TRUE)
 
 FetchContent_Declare(
-        numerals
-        GIT_REPOSITORY https://github.com/ondesly/numerals.git
-        GIT_TAG 1.0
+        vectors
+        GIT_REPOSITORY https://github.com/ondesly/vectors.git
+        GIT_TAG v1.2.1
         GIT_SHALLOW TRUE
         GIT_PROGRESS TRUE)
 
 #
 
-FetchContent_MakeAvailable(cairo pixman pugixml stb numerals)
+FetchContent_MakeAvailable(cairo pixman pugixml stb vectors)
 
 #########
 # Build #

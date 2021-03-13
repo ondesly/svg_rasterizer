@@ -16,7 +16,7 @@ add_library(svg STATIC
         svg/packer.cpp
         svg/renderer.cpp)
 
-target_link_libraries(svg PUBLIC cairo pugixml stb numerals)
+target_link_libraries(svg PUBLIC cairo pugixml stb vectors)
 
 set_target_properties(svg PROPERTIES
         CXX_STANDARD 17
