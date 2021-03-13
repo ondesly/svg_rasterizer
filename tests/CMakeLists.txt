@@ -9,6 +9,6 @@
 project(tests)
 
 add_executable(test1 main.cpp)
-target_link_libraries(test1 svg)
+target_link_libraries(test1 svg_texture_packer)
 
 add_test(NAME Test1 COMMAND test1)

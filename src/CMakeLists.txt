@@ -12,34 +12,24 @@ find_package(Stb REQUIRED)
 
 #
 
-add_library(svg STATIC
+add_library(svg_texture_packer STATIC
         svg/packer.cpp
         svg/renderer.cpp)
 
-target_link_libraries(svg PUBLIC cairo pugixml stb vectors)
-
-set_target_properties(svg PROPERTIES
-        CXX_STANDARD 17
-        CXX_STANDARD_REQUIRED YES
-        CXX_EXTENSIONS NO)
-
-target_include_directories(svg PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/../include>
-        $<INSTALL_INTERFACE:include>)
+target_link_libraries(svg_texture_packer PUBLIC cairo pugixml stb vectors)
 
 #
 
+set(INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/../include)
+
 set(PUBLIC_HEADERS
-        ../include/svg/packer.h
-        ../include/svg/renderer.h)
+        ${INCLUDE_DIR}/svg/packer.h
+        ${INCLUDE_DIR}/svg/renderer.h)
 
-install(TARGETS svg cairo pixman pugixml stb
-        EXPORT svg-config
-        LIBRARY DESTINATION lib
-        ARCHIVE DESTINATION lib
-        RUNTIME DESTINATION bin
-        INCLUDES DESTINATION include)
+set_target_properties(svg_texture_packer PROPERTIES PUBLIC_HEADER "${PUBLIC_HEADERS}")
 
-install(FILES ${PUBLIC_HEADERS} DESTINATION include/svg)
+target_include_directories(svg_texture_packer PUBLIC $<BUILD_INTERFACE:${INCLUDE_DIR}> $<INSTALL_INTERFACE:include>)
 
-install(EXPORT svg-config DESTINATION lib/cmake/svg)
+#
+
+set_target_properties(svg_texture_packer PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED YES CXX_EXTENSIONS NO)

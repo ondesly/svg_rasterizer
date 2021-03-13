@@ -66,6 +66,19 @@ FetchContent_MakeAvailable(cairo pixman pugixml stb vectors)
 add_subdirectory(src)
 
 ###########
+# Install #
+###########
+
+include(GNUInstallDirs)
+
+install(TARGETS ${PROJECT_NAME} cairo pixman pugixml stb
+        EXPORT ${PROJECT_NAME}-config
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}${INSTALL_SUFFIX}
+        PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}${INSTALL_SUFFIX}/${PROJECT_NAME})
+
+install(EXPORT ${PROJECT_NAME}-config DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
+
+###########
 # Testing #
 ###########
 
