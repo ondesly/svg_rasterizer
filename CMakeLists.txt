@@ -43,8 +43,8 @@ FetchContent_Declare(
 
 FetchContent_Declare(
         stb
-        GIT_REPOSITORY https://github.com/nothings/stb.git
-        GIT_TAG b42009b3b9d4ca35bc703f5310eedc74f584be58
+        GIT_REPOSITORY https://github.com/ondesly/stb.git
+        GIT_TAG v1.0.0
         GIT_SHALLOW TRUE
         GIT_PROGRESS TRUE)
 
